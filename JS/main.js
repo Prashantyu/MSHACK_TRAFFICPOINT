@@ -17788,14 +17788,14 @@ map.setZoom(14);
 
 counter = 0,
  timer = setInterval(function(){
-   moveMarker(testArr[counter++], testArr[counter]);
+   moveMarker(testArr[counter++], testArr[counter],counter);
        counter++
        if (counter === testArr.length) {
              clearInterval(timer);
        }
  },10);
 
-function moveMarker(latitude,longitude){
+function moveMarker(latitude,longitude,index){
   //console.log('Hello');
   console.log(latitude +' ' + longitude);
 
@@ -17811,6 +17811,7 @@ function moveMarker(latitude,longitude){
   map.removeLayer(marker);
   //marker.setLatLng(latitude,longitude);
   //L.remove();
+  if(index>4881)
     marker = L.marker([latitude, longitude],{icon: iconAmb}).addTo(map);
     //map.setView(pt);
 };
