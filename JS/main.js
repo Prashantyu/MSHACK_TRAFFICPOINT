@@ -245,14 +245,7 @@ request.onload = function () {
   //createDistanceParameters();
   //funNew();
  // FindEmergency();
- counter = 4000,
- timer = setInterval(function(){
-   moveMarker(testArr[counter++], testArr[counter]);
-       counter++
-       if (counter === testArr.length) {
-             clearInterval(timer);
-       }
- },00);
+ 
 
  var testArr = [12.88630916316,77.656227350235
   ,12.8863123007474,77.6562155485153
@@ -17792,6 +17785,15 @@ $("#log").click(function(){
   console.log(token);
 });
 map.setZoom(14);
+
+counter = 0,
+ timer = setInterval(function(){
+   moveMarker(testArr[counter++], testArr[counter]);
+       counter++
+       if (counter === testArr.length) {
+             clearInterval(timer);
+       }
+ },10);
 
 function moveMarker(latitude,longitude){
   //console.log('Hello');
